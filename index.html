@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 11 Months, My Love! 💖</title>
+    <style>
+        :root {
+            --primary-pink: #ffb7b2;
+            --dark-pink: #ff8b94;
+            --soft-white: #fff1f2;
+            --text-color: #4a4a4a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--soft-white);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 1rem;
+            animation: fadeIn 2s ease-in;
+        }
+
+        h1 {
+            color: var(--dark-pink);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #7d7d7d;
+        }
+
+        /* Countdown Timer Section */
+        .timer-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(255, 139, 148, 0.2);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            margin-bottom: 3rem;
+        }
+
+        .timer-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark-pink);
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .time-box {
+            background: var(--soft-white);
+            padding: 0.75rem;
+            border-radius: 10px;
+            width: 70px;
+        }
+
+        .time-box span {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--dark-pink);
+        }
+
+        .time-box label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #888;
+        }
+
+        /* Love Letter Section */
+        .letter-container {
+            background: white;
+            max-width: 600px;
+            width: 90%;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin-bottom: 3rem;
+        }
+
+        .letter-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .letter-heart {
+            font-size: 2rem;
+            text-align: center;
+            color: var(--dark-pink);
+            margin-bottom: 1rem;
+            animation: pulse 1.5s infinite;
+        }
+
+        .letter-content {
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* Grid / Memory Section Placeholders */
+        .gallery {
+            max-width: 800px;
+            width: 90%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .gallery-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            border: 1px solid var(--soft-white);
+        }
+
+        .gallery-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Floating Hearts Styling */
+        .heart-particle {
+            position: fixed;
+            color: var(--dark-pink);
+            font-size: 1.5rem;
+            pointer-events: none;
+            z-index: 999;
+            animation: floatUp 4s linear infinite;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Happy 11 Months, My Love! 🌸</h1>
+        <p class="subtitle">11 months down, forever to go...</p>
+    </header>
+
+    <!-- Timer Box -->
+    <div class="timer-container">
+        <p class="timer-title">Time spent loving you:</p>
+        <div class="countdown">
+            <div class="time-box"><span id="days">00</span><label>Days</label></div>
+            <div class="time-box"><span id="hours">00</span><label>Hours</label></div>
+            <div class="time-box"><span id="minutes">00</span><label>Mins</label></div>
+            <div class="time-box"><span id="seconds">00</span><label>Secs</label></div>
+        </div>
+    </div>
+
+    <!-- Interactive Love Letter -->
+    <div class="letter-container" onclick="createHeartShower()">
+        <div class="letter-heart">💝</div>
+        <div class="letter-content">
+            <p><strong>To my favorite person,</strong></p><br>
+            <p>I can't believe it has already been 11 months since we started this beautiful journey. Every single day with you is a blessing, and my love for you only grows deeper with time. Thank you for the laughs, the late-night talks, and the endless support.</p><br>
+            <p>Next month is the big 1-year mark, but today is just as special because it's another month of loving you. Click anywhere on this letter for a little surprise! ✨</p>
+        </div>
+    </div>
+
+    <!-- Reasons why I love you section -->
+    <div class="gallery">
+        <div class="gallery-card">
+            <div class="icon">🥰</div>
+            <h3>Your Smile</h3>
+            <p>It brightens up my darkest days instantly.</p>
+        </div>
+        <div class="gallery-card">
+            <div class="icon">🤗</div>
+            <h3>Your Hugs</h3>
+            <p>The safest and warmest place in the world.</p>
+        </div>
+        <div class="gallery-card">
+            <div class="icon">✨</div>
+            <h3>Our Future</h3>
+            <p>I can't wait for all the months and years ahead.</p>
+        </div>
+    </div>
+
+    <script>
+        // --- COUNT UP TIMER CONFIGURATION ---
+        // Replace this date with the exact day your relationship started!
+        // Format: YYYY, MM (0-11 for Jan-Dec), DD, Hour, Minute
+        const anniversaryDate = new Date(2025, 7, 3, 0, 0, 0); // e.g., August 3, 2025
+
+        function updateTimer() {
+            const now = new Date();
+            const difference = now - anniversaryDate;
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+        }
+
+        setInterval(updateTimer, 1000);
+        updateTimer(); // Initial call
+
+        // --- FLOATING HEARTS GENERATOR ---
+        function createHeartShower() {
+            for(let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.classList.add('heart-particle');
+                    heart.innerText = ['💖', '❤️', '💕', '✨', '🌸'][Math.floor(Math.random() * 5)];
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                    heart.style.fontSize = (Math.random() * 1 + 1) + 'rem';
+                    document.body.appendChild(heart);
+                    
+                    // Clean up elements after animation ends
+                    setTimeout(() => heart.remove(), 4000);
+                }, i * 100);
+            }
+        }
+
+        // Periodically spawn background floating hearts naturally
+        setInterval(() => {
+            const heart = document.createElement('div');
+            heart.classList.add('heart-particle');
+            heart.innerText = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = '5s';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }, 3000);
+    </script>
+</body>
+</html>
